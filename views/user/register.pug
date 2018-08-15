@@ -1,0 +1,35 @@
+extends ../layout.pug
+
+block content
+    form(method='post')
+        fieldset
+            h1.register Register 
+            .form-group.register
+                label(for='username') Username
+                input#exampleInputEmail1.form-control(name='username', type='text' value=username)
+                small#emailHelp.form-text.text-muted Notice, remember your username!
+            .form-group.register
+                label(for='password') Password
+                input#exampleInputPassword1.form-control(name='password', type='password')
+            .form-group.register
+                label(for='confirmedPassword') Confirm Password
+                input#exampleInputPassword1.form-control(name='confirmedPassword', type='password')
+            .form-group.register
+                label(for='firstName') First Name
+                input#exampleInputEmail1.form-control(name='firstName', type='text' value=firstName)
+            .form-group.register
+                label(for='lastName') Last Name
+                input#exampleInputEmail1.form-control(name='lastName', type='text' value=lastName)
+            .form-group.register
+                label(for='age') Age
+                input#exampleInputEmail1.form-control(name='age', type='number' value=age)
+            .form-group.register
+                label(for='about') About you
+                textarea#exampleTextarea.form-control(name='about', type='text' value=about)
+            .form-group.register
+                label(for='gender') Gender
+                select#exampleSelect1.form-control(name='gender')
+                    option Male
+                    option Female
+            .form-group.register
+                input.btn.btn-outline-success(type='submit', value='Register')

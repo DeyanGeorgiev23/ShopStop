@@ -1,0 +1,47 @@
+doctype html
+html(lang='en')
+  head
+    meta(charset='UTF-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1.0')
+    meta(http-equiv='X-UA-Compatible', content='ie=edge')
+    title ShopStop
+    link(rel='icon', type='image/x-icon', href='/content/images/favicon.ico')
+    link(rel='stylesheet', type='text/css', href='/content/styles/site.css')
+    link(rel='stylesheet', href='https://use.fontawesome.com/releases/v5.2.0/css/all.css', integrity='sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ', crossorigin='anonymous')
+    link(href="https://stackpath.bootstrapcdn.com/bootswatch/4.1.2/slate/bootstrap.min.css", rel="stylesheet", integrity="sha384-fSVTHAcdTrW2AQFxwcv4yRDyQdnteeIOLhHrrKIO4xTLK+JrplIISHbIHvfcYEKK", crossorigin="anonymous")
+  body
+    header
+      nav.navbar.navbar-expand-lg.navbar-dark.bg-primary
+        p.navbar-brand ShopStop
+        ul.navbar-nav.mr-auto
+          li.nav-item.active
+            a.nav-link(href='/') Home
+          li.nav-item
+            a.nav-link(href='/product/add') Add Product
+          li.nav-item
+            a.nav-link(href='/category/add') Add Category
+          li.delimeter
+          if user
+            li.nav-item
+              form#logout-form(method="post" action="/user/logout")
+                a.nav-link(href="javascript:document.getElementById('logout-form').submit()") Logout
+            li.nav-item
+              a.nav-link(href="/user/profile") Profile
+            if bougthProducts  
+              li.nav-item
+                a.nav-link(href=`/product/bag`) Checkout
+            li.nav-item
+              span= user.username
+          else 
+            li.nav-item
+              a.nav-link.reg(href='/user/register') Register
+            li.nav-item
+              a.nav-link.log(href='/user/login') Login
+    if error 
+      h2.error-msg= error
+    else if success
+      h2.success-msg= success      
+main
+  block content
+footer
+  p &copy;ShopStop

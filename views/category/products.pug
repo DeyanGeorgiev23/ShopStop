@@ -1,0 +1,17 @@
+extends ../layout.pug
+
+block content
+  h1.all=`All ${category.name} products`
+  a.btn.btn-outline-info.back(value='Back', href=`/`)='Back'
+  .cards
+    each product in category.products
+      .card.mb-3
+        h3.card-header=product.name
+        .card-body
+          img(src=`${product.image}`)
+          p.card-text=product.description
+          p.card-text=`£${product.price}`
+          a.btn.btn-outline-success(href=`/product/buy/${product._id}`)= 'Buy'
+          a.btn.btn-outline-warning(href=`/product/edit/${product._id}`)= 'Edit'
+          a.btn.btn-outline-danger(href=`/product/delete/${product._id}`)= 'Delete'
+    

@@ -1,0 +1,102 @@
+extends ../layout.pug
+
+block content
+    h1.head Your Products
+    .cards
+        if products
+            each product in products
+                .card.mb-3
+                    h3.card-header=product.name
+                    .card-body
+                        img(src=`${product.image}`)
+                        p.card-text=product.description
+                        p.card-text=`${product.price} Лв.`
+            else 
+                h4.totalPr=`Total: 0 You have't add any products!`
+    form(method='post')
+        h1.head='Check Out!'
+    h3 Personal Details
+    .user-credentials
+        .form-group
+            label.col-form-label.col-form-label-lg(for='phoneNumber') Phone Number
+            input#inputLarge.form-control.form-control-lg(name='phoneNumber', type='number', value=phoneNumber, placeholder='Phone Number')
+        .form-group
+            label.col-form-label.col-form-label-lg(for='shippingAddress') Shipping Address
+            textarea#exampleTextarea.form-control(name='shippingAddress', type='text', value=shippingAddress, placeholder='Street Address')
+        .form-group
+            label.col-form-label.col-form-label-lg(for="shippingAddress") City
+            input#inputLarge.form-control.form-control-lg(name='shippingAddress', type='text', value=shippingAddress, placeholder='City')
+        .form-group
+            label.col-form-label.col-form-label-lg(for="shippingAddress") State / Province
+            input#inputLarge.form-control.form-control-lg(name='shippingAddress', type='text', value=shippingAddress, placeholder='State / Province')
+        .form-group
+            label.col-form-label.col-form-label-lg(for="shippingAddress") Post Code / Zip Code
+            input#inputLarge.form-control.form-control-lg(name='shippingAddress', type='text', value=shippingAddress, placeholder='Postal / Zip Code')    
+        .form-group
+            label(for='city') Country
+            select.custom-select(name='city')
+                option(selected='') Select Country
+                option(value="United States") United States 
+                option(value="Argentina") Argentina 
+                option(value="Brazil") Brazil 
+                option(value="Bulgaria") Bulgaria 
+                option(value="Croatia") Croatia 
+                option(value="France") France 
+                option(value="Germany") Germany 
+                option(value="Hong Kong") Hong Kong
+    h3  Credit Card Details
+    .links
+        label='Method'
+        a.i.fab.fa-cc-paypal(href="https://www.paypal.com/us/home")
+        
+        a.i.fab.fa-cc-visa(href="https://www.visabg.com/")
+        
+        a.i.fab.fa-cc-mastercard(href="https://www.mastercard.bg/bg-bg.html")
+        
+        a.i.fab.fa-apple-pay(href="https://www.apple.com/apple-pay/")
+    form(method='post')
+        .cards-credentials
+            .form-group
+                label.col-form-label.col-form-label-lg(for='firstName') First Name
+                input#inputLarge.form-control.form-control-lg(name='firstName', type='text', value=firstName, placeholder='First Name')
+            .form-group
+                label.col-form-label.col-form-label-lg(for='lastName') Last Name
+                input#inputLarge.form-control.form-control-lg(name='lastName', type='text', value=lastName, placeholder='Last Name')
+            .form-group
+                label.col-form-label.col-form-label-lg(for='creditCard') Credit Card Number
+                input#inputLarge.form-control.form-control-lg(name='creditCard', type='number', value=creditCard, placeholder='Credit Card Number')
+            .form-group
+                label.col-form-label.col-form-label-lg(for="security") Security Code
+                input#inputLarge.form-control.form-control-lg(name='security', type="number", value=security, placeholder='Security Code')
+            .form-group
+                label(for='Expiration') Expiration Month
+                select.custom-select(name='Expiration')
+                    option(selected='') Select Month
+                    option(value="January") January
+                    option(value="February") February 
+                    option(value="March") March 
+                    option(value="April") April
+                    option(value="May") May 
+                    option(value="June") June 
+                    option(value="July") July 
+                    option(value="August") August 
+                    option(value="September") September 
+                    option(value="October") October 
+                    option(value="November") November
+                    option(value="December") December
+            .form-group
+                label(for='ExpirationYear') Expiration Year
+                select.custom-select(name='ExpirationYear')
+                    option(selected='') Select Year
+                    option(value="2018") 2018 
+                    option(value="2019") 2019 
+                    option(value="2020") 2020 
+                    option(value="2021") 2021 
+                    option(value="2022") 2022 
+                    option(value="2023") 2023 
+                    option(value="2024") 2024 
+        .paybtn
+            input.btn.btn-outline-success(type='submit', value='Pay')
+            if price
+                p.total=`Тotal ${price} лв.`
+    

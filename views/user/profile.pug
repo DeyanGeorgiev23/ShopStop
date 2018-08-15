@@ -1,0 +1,68 @@
+extends ../layout.pug
+
+block content
+    if male
+        .card.border-success.mb-3(style='max-width: 20rem;')
+            .card-header=`${user.username}!`
+            .card-body
+                h4.card-title=`${user.firstName} ${user.lastName}`
+                h4.card-title=`${user.age}`
+                h4.card-title=`${user.gender}`
+                p.card-text=`${user.about}`
+    if female
+         .card.border-danger.mb-3(style='max-width: 20rem;')
+            .card-header=`${user.username}!`
+            .card-body
+                h4.card-title=`${user.firstName} ${user.lastName}`
+                h4.card-title=`${user.age}`
+                h4.card-title=`${user.gender}`
+                p.card-text=`${user.about}`
+    table.table.table-hover
+        thead
+            tr
+                th(scope='col')=`Created Categories!`
+        tbody
+            tr
+            if male
+                if categories
+                each category in categories
+                    td.male(scope='row')=`${category.name}`
+                else 
+                    td.male(scope='row')='You have not created any categories!'
+            if female
+                if categories
+                each category in categories
+                    td.female(scope='row')=`${category.name}`
+                else 
+                    td.female(scope='row')='You have not created any categories!'
+        thead
+            tr
+                th(scope='col')='Created Products!'
+        tbody
+            tr
+            if female
+                if products
+                each product in products
+                    td.female(scope='row')=`Products ${product.name}`
+                else
+                    td.female(scope='row')='You have not created any products!'
+            if male
+                if products
+                each product in products
+                    td.male(scope='row')=`Products ${product.name}`
+                else
+                    td.male(scope='row')='You have not created any products!'
+    h2.bougth='Products in Checkout!'
+    .product-card
+        if bougthProducts
+        .cards
+            each bougthProduct in bougthProducts
+                .card.mb-3
+                    h3.card-header=bougthProduct.name
+                    .card-body
+                        img(src=`${bougthProduct.image}`)
+                        p.card-text=bougthProduct.description
+                        p.card-text=`£${bougthProduct.price}`
+                        a.btn.btn-outline-success(href=`../product/bag`)= 'Checkout'
+            else
+                h4.totalPr=`Total: 0 You have't add any products in Checkout box!`

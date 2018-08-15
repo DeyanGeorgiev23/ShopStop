@@ -1,0 +1,14 @@
+extends ../layout.pug
+
+block content
+    form.form.center-form(method='post')
+        h1.login Login
+        .form-group.login
+            label(for='username') Username
+            input#exampleInputEmail1.form-control(name='username', type='text', placeholder='username')
+        .form-group.login
+            label(for='password') Password
+            input#exampleInputPassword1.form-control(name='password', type='password', placeholder='password')
+            
+        .form-group.login
+            input.btn.btn-outline-success(type='submit', value='Login')

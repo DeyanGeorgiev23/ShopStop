@@ -1,0 +1,14 @@
+extends ../layout.pug
+
+block content
+  form(method='post')
+    h1.buy Buy Product
+    .cards
+      .card.mb-3
+        h3.card-header=product.name
+        .card-body
+          img(src=`${product.image}`)
+          p.card-text=product.description
+          p.card-text=`£${product.price}`
+          input.btn.btn-outline-success(type='submit', value='Buy', href=`/product/bag`)
+          a.btn.btn-outline-info(value='Back', href=`/`) Back

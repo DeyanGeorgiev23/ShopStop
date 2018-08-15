@@ -1,0 +1,20 @@
+extends ../layout.pug
+
+block content
+  h1.head Welcome to ShopStop!
+  form.form-inline.my-2.my-lg-0
+    input.form-control.mr-sm-2(type='text', name='query', placeholder='Search...')
+    input.btn.btn-secondary.my-2.my-sm-0(type='submit', value='Search')
+  .cards
+    each product in products
+      .card.mb-3
+        h3.card-header=product.name
+        .card-body
+          img(src=`${product.image}`)
+          p.card-text=product.description
+          p.card-text=`£${product.price}.`
+          p.card-text=`Create by ${creator}`
+          a.btn.btn-outline-success(href=`/product/buy/${product._id}`)= 'Buy'
+          a.btn.btn-outline-warning(href=`/product/edit/${product._id}`)= 'Edit'
+          a.btn.btn-outline-danger(href=`/product/delete/${product._id}`)= 'Delete'
+          a.btn.btn-outline-info(href=`/category/${product.category.name}/products`)=`More ${product.category.name}`

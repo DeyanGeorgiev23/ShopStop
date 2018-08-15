@@ -1,0 +1,386 @@
+@import url('https://fonts.googleapis.com/css?family=Lato:400,900');
+
+body {
+  border-left: 1px solid rgb(10, 10, 10);
+  border-right: 3px solid rgb(10, 10, 10);
+}
+
+main {
+  min-height: 30rem;
+}
+
+footer {
+  text-align: center;
+  padding: 1rem;
+  margin-top: 2rem;
+  border-bottom: 1px solid rgb(10, 10, 10);
+  border-top: 1px solid rgb(60, 83, 59);
+}
+
+a.btn {
+  margin-left: 10px;
+}
+
+h4.totalPr {
+  margin-left: 9px;
+  text-align: left;
+}
+
+.form-control{
+  margin-right: 35%;
+}
+
+.cards {
+  display: grid;
+  grid-gap: 20px;
+  grid-template-columns: 1fr 1fr 1fr;
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-top: 15px;
+}
+
+.links {
+  display: -webkit-box;
+  width: 40%;
+  font-size: 280%;
+  padding-left: 5%;
+  padding-top: 3%;
+}
+
+
+.links a {
+  display: grid;
+  padding-left: 11%;
+}
+
+.links label {
+  font-size: 70%;
+}
+
+.total {
+  margin-top: 9px;
+  width: 150px;
+  padding: 1.5px;
+}
+
+.user-credentials {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  padding-left: 9%;
+  padding-right: 2%;
+  padding-top: 1.5%;
+  padding-bottom: 3%;
+}
+
+.cards-credentials {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  padding-left: 9%;
+  padding-right: 2%;
+  padding-top: 1.5%;
+  padding-bottom: 3%;
+}
+
+.card-body img {
+  max-width: 80%;
+  height: auto;
+  margin-bottom: 1rem;
+  margin-left: 10%;
+}
+
+.form-inline.my-2.my-lg-0 {
+  padding: 1%;
+  padding-left: 1.4%;
+}
+
+.form-group {
+  width: 80%;
+}
+
+.form-group.login {
+  padding-left: 20rem;
+  width: 800px;
+}
+
+.form-group.register {
+  padding-left: 20rem;
+  width: 800px;
+}
+
+.form-group.category{
+  padding-left: 20rem;
+  width: 700px;
+}
+
+.form-group.product {
+  padding-left: 20rem;
+  width: 900px;
+}
+
+.form-group.edit {
+  padding-left: 20rem;
+  width: 900px;
+}
+
+h1.all {
+  margin-left: 0.1rem;
+  text-align: center;
+}
+
+h1 {
+  margin-left: 20rem;
+}
+
+h1.buy {
+  margin-left: 20px;
+}
+
+h2 {
+  margin-left: 1.5rem;
+}
+
+h2.bougth {
+  padding-top: 2rem;
+  text-align: center;
+}
+
+legend.user {
+  padding-bottom: 1.5rem;
+  padding-left: 0.5rem;
+  margin: 1rem;
+}
+
+h3 {
+  padding-left: 3rem;
+  padding-top: 1rem;
+}
+
+a.btn.btn-outline-info.back{
+  padding: 1rem;
+  margin-left: 2rem;
+}
+
+.head {
+  margin-top: 2%;
+  text-align: center;
+  margin-left: 0;
+  margin-right: 0;
+}
+
+.paybtn {
+  margin-bottom: 5%;
+  padding-left: 9%;
+}
+
+.error-msg, .success-msg {
+  margin-top: 0px;
+  text-align: center;
+}
+
+.error-msg {
+  color: red;
+}
+
+.success-msg {
+  color: green;
+}
+
+.card.border-success.mb-3 {
+  margin-left: 20px;
+  margin-top: 20px;
+  margin-bottom: 40px; 
+}
+
+.card.border-danger.mb-3 {
+  margin-left: 20px;
+  margin-top: 20px;
+  margin-bottom: 40px; 
+}
+
+table tbody td.male:hover{
+  border: 1px solid green;
+  color: green;
+}
+
+table tbody td.female:hover{
+  border: 1px solid red;
+  color: red;
+}
+
+@media (max-width: 500px) {
+   .links {
+    display: -webkit-box;
+    width: 20%;
+    font-size: 280%;
+    grid-template-areas: 
+      'showcase'
+      'top-box-a'
+  } 
+
+  .cards {
+     grid-template-columns: repeat(auto-fit, minmax(300px, 3fr)); 
+  }
+
+  .user-credentials {
+    padding-left: 5%;
+    padding-right: 5%;
+    padding-top: 1.5%;
+    padding-bottom: 3%;
+  }
+
+  .cards-credentials {
+    padding-left: 5%;
+    padding-right: 5%;
+    padding-top: 1.5%;
+    padding-bottom: 3%;
+  }
+
+  .form-group.login {
+    padding-left: 20%;
+    width: 80%;
+  }
+
+  .form-group.product {
+    padding-left: 20%;
+    width: 80%;
+  }
+
+  .form-group.category{
+    padding-left: 20%;
+    width: 80%;
+  }
+
+  .form-group.register {
+    padding-left: 20%;
+    width: 80%;
+  }
+
+  .form-inline.my-2.my-lg-0 {
+    padding: 1%;
+    padding-left: 4%;
+    display: inline-block;
+  }
+  nav.navbar.navbar-expand-lg.navbar-dark.bg-primary {
+    margin: 2px;
+    margin-left: 1px;
+    text-align: center;
+  }
+
+  ul.navbar-nav.mr-auto  {
+    display: grid;
+    grid-column-gap: 5px;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    
+  }
+
+  header {
+    max-height: 300px;
+  }
+
+  .navbar-brand {
+    padding-top: 1px;
+    margin-top: 1px;
+    margin-left: 120px;
+  }
+
+  .form-group.edit {
+    padding-left: 20%;
+    width: 80%;
+  }
+
+  h1 {
+      margin-top: 2%;
+      text-align: center;
+      margin-left: 0;
+      margin-right: 0;
+  }
+}
+
+@media (max-width: 1000px) {
+  .links {
+    display: -webkit-box;
+    width: 20%;
+    font-size: 280%;
+    grid-template-areas: 
+      'showcase'
+      'top-box-a'
+  } 
+
+  .cards {
+     grid-template-columns: repeat(auto-fit, minmax(300px, 3fr)); 
+  }
+
+  .user-credentials {
+    padding-left: 5%;
+    padding-right: 5%;
+    padding-top: 1.5%;
+    padding-bottom: 3%;
+  }
+
+  .cards-credentials {
+    padding-left: 5%;
+    padding-right: 5%;
+    padding-top: 1.5%;
+    padding-bottom: 3%;
+  }
+
+  .form-group.login {
+    padding-left: 20%;
+    width: 80%;
+  }
+
+  .form-group.product {
+    padding-left: 20%;
+    width: 80%;
+  }
+
+  .form-group.category{
+    padding-left: 20%;
+    width: 80%;
+  }
+
+  .form-group.register {
+    padding-left: 20%;
+    width: 80%;
+  }
+
+  .form-inline.my-2.my-lg-0 {
+    padding: 1%;
+    padding-left: 4%;
+    display: inline-block;
+  }
+  nav.navbar.navbar-expand-lg.navbar-dark.bg-primary {
+    margin: 2px;
+    margin-left: 1px;
+    text-align: center;
+  }
+
+  ul.navbar-nav.mr-auto  {
+    display: grid;
+    grid-column-gap: 5px;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    
+  }
+
+  header {
+    max-height: 300px;
+  }
+
+  .navbar-brand {
+    padding-top: 1px;
+    margin-top: 1px;
+    margin-left: 120px;
+  }
+
+  .form-group.edit {
+    padding-left: 20%;
+    width: 80%;
+  }
+
+  h1 {
+      margin-top: 2%;
+      text-align: center;
+      margin-left: 0;
+      margin-right: 0;
+  }
+}

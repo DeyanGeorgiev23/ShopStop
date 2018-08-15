@@ -1,0 +1,30 @@
+extends ../layout.pug
+
+block content
+  form.form.center-form(method='post', enctype='multipart/form-data')
+    h1.product Add Product
+    .form-group.product
+      label.form-control-label(for='name') Name
+      input#exampleInputEmail1.form-control(name='name', type='text', placeholder='Product Name')
+    .form-group.product
+      label(for='description') Description
+      textarea#exampleTextarea.form-control(name='description', type='text', placeholder='Description')
+    .form-group.product
+       label.control-label(for='price') Price
+        .form-group.product
+        .input-group.mb-3
+          .input-group-prepend
+            span.input-group-text £
+          input.form-control(name='price', type='number', step="0.01" min="0", placeholder='Price')
+    .form-group.product
+      .input-group.mb-3
+        .custom-file
+          label.custom-file-label(for='image') Choose file
+          input#inputGroupFile02.custom-file-input(name='image', type='file', accept='.jpg,.jpeg,.png')
+    .form-group.product
+        label(for='description') Select Group
+        select.custom-select(name='category')
+          each category in categories
+            option(value=`${category._id}`)=category.name
+    .form-group.product
+      input.btn.btn-outline-success(type='submit', value='Add')

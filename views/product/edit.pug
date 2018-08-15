@@ -1,0 +1,35 @@
+extends ../layout.pug
+
+block content
+  form.form.center-form(method='post', enctype='multipart/form-data')
+    h1 Edit Product
+    .form-group.edit
+      label.form-control-label(for='name') Name
+      input#exampleInputEmail1.form-control(name='name', type='text', value=product.name )
+    .form-group.edit
+      label(for='description') Description
+      textarea#exampleTextarea.form-control(name='description', type='text')= product.description
+    .form-group.edit
+      label.control-label(for='price') Price
+        .form-group.edit
+        .input-group.mb-3
+          .input-group-prepend
+            span.input-group-text $
+          input.form-control(name='price', type='number', step="0.01" min="0" value=product.price)
+    .form-group.edit
+      .input-group.mb-3
+        .custom-file
+          label.custom-file-label(for='image') Image
+          input#inputGroupFile02.custom-file-input(name='image', type='file', accept='.jpg,.jpeg,.png')
+    .form-group.edit
+      label(for='description') Group
+      select.custom-select(name='category')
+        each category in categories
+          if (category._id.equals(product.category))
+            option(value=`${category._id}` selected)=category.name
+          else
+            option(value=`${category._id}`)=category.name
+    .form-group.edit
+      input.btn.btn-outline-warning(type='submit', value='Edit')
+      a.btn.btn-outline-info(value='Back', href=`/`) Back
+        

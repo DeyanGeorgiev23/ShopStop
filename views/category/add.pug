@@ -1,0 +1,10 @@
+extends ../layout.pug
+
+block content
+    form#add-category-form.center-form(method='post')
+        h1.category Add Category
+        .form-group.category
+            label(for='name') Name
+            input#exampleInputEmail1.form-control(name='name', type='text', placeholder='Category Name')
+        .form-group.category
+            input.btn.btn-outline-success(value='Add', type='submit')

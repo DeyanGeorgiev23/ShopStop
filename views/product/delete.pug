@@ -1,0 +1,13 @@
+extends ../layout.pug
+
+block content
+  form(method='post', enctype='multipart/form-data')
+    h1.buy Delete Product
+    .cards
+      .card.mb-3
+        h3.card-header=product.name
+        .card-body
+          img(src=`${product.image}`)
+          p.card-text=product.description
+          input.btn.btn-outline-danger(type='submit', value='Delete')
+          a.btn.btn-outline-info(value='Back', href=`/`) Back
